@@ -1,0 +1,99 @@
+{% load static %}
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="{% static 'imginfo/favicon.png' %}" type="image/png">
+        <title>MeetMe Personal</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'cssinfo/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'vendorstag/linericon/style.css' %}">
+        <link rel="stylesheet" href="{% static 'cssinfo/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static  'vendorstag/owl-carousel/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'vendorstag/lightbox/simpleLightbox.css' %}">
+        <link rel="stylesheet" href="{% static 'vendorstag/nice-select/css/nice-select.css' %}">
+        <link rel="stylesheet" href="{% static 'vendorstag/animate-css/animate.css' %}">
+        <link rel="stylesheet" href="{% static 'vendorstag/popup/magnific-popup.css' %}">
+        <link rel="stylesheet" href="{% static 'vendorstag/flaticon/flaticon.css'%}">
+        <!-- main css -->
+        <link rel="stylesheet" href="{% static 'cssinfo/style.css' %}">
+        <link rel="stylesheet" href="{% static 'cssinfo/responsive.css' %}">
+    </head>
+    <body>
+<section class="home_banner_area">
+    <div class="row">
+        <div class="container box_1620">
+            <div class="banner_inner">
+             <div class="banner_content">
+                 <div class="media">
+                     <div class="col-lg-6">
+                        <div class="home_left_img">
+                            <img src="{{vendors.image.url}}" alt="" height =420 >
+                        </div>
+
+                     </div>
+                     
+                     <div class="col-lg-6">
+                        <div class="media-body ">
+                        
+                            <div class="personal_text" >
+                                
+                                   <h6>Hello Everybody, i am</h6>
+                                   <h3>{{vendors.name}}</h3>
+                                   <h4>Rs. {{vendors.price}} (based on orders)</h4>
+                                   <p>{{vendors.bio}}</p>
+                                   <ul class="list basic_info">
+                                       <li><a href="#"><i class="lnr lnr-calendar-full"></i> {{vendors.type}}</a></li>
+                                       <li><a href="#"><i class="lnr lnr-phone-handset"></i> {{vendors.phone}}</a></li>
+                                       <li><a href="#"><i class="lnr lnr-envelope"></i> {{vendors.email}}</a></li>
+                                       <li><a href="#"><i class="lnr lnr-home"></i>{{vendors.address}}</a></li>
+                                   </ul>
+                                   <ul class="list personal_social">
+                                       <li><a href="{{vendors.fb}}"><i class="fa fa-facebook"></i></a></li>
+                                       <li><a href="{{vendors.twitter}}"><i class="fa fa-twitter"></i></a></li>
+                                       <li><a href="{{vendors.insta}}"><i class="fa fa-instagram"></i></a></li>
+                                   </ul>
+                                    
+                            </div>
+                                
+                            </div>
+                           
+                               
+                            
+                        </div>
+
+                     </div>
+                     
+                 </div>
+             </div>
+         </div>
+     </div>
+
+    </div>
+
+</section>
+
+<!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="{%static 'jsinfo/jquery-3.3.1.min.js' %}"></script>
+        <script src="{%static  'jsinfo/popper.js' %}"></script>
+        <script src="{%static 'jsinfo/bootstrap.min.js' %}"></script>
+        <script src="{%static 'jsinfo/stellar.js' %}"></script>
+        <script src="{% static 'vendorstag/lightbox/simpleLightbox.min.js' %}"></script>
+        <script src="{% static 'vendorstag/nice-select/js/jquery.nice-select.min.js'%}"></script>
+        <script src="{% static 'vendorstag/isotope/imagesloaded.pkgd.min.js' %}"></script>
+        <script src="{% static 'vendorstag/isotope/isotope.pkgd.min.js' %}"></script>
+        <script src="{% static 'vendorstag/owl-carousel/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'vendorstag/popup/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'jsinfo/jquery.ajaxchimp.min.js' %}"></script>
+        <script src="{% static 'vendorstag/counter-up/jquery.waypoints.min.js' %}"></script>
+        <script src="{% static 'vendorstag/counter-up/jquery.counterup.min.js' %}"></script>
+        <script src="{% static 'jsinfo/mail-script.js' %}"></script>
+        <script src="{% static 'jsinfo/theme.js' %}"></script>
+    </body>
+</html>
+
+

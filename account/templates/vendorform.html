@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vendor registeration System</title>
+    <!-- Bootstrap 4 Stylesheet -->
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+</head>
+<body class="bg-light">
+    <div class="container">
+		<div class="row mt-5">
+			{%for message in messages%}
+        <p id="message">{{message}}</p>
+        {%endfor%}
+			<div class="col-md-8 offset-2">
+				<div class="card shadow">
+					<div class="card-header">
+						<b>Vendor Form </b>
+						<a href="/vendorregister/" class="float-right btn btn-sm btn-primary">Back to Vendor registeration</a>
+						
+					</div>
+					<div class="card-body">
+						<form method="post" action="" enctype="multipart/form-data">
+							{% csrf_token %}
+							<table class="table table-bordered mt-4">
+								
+								<tr>
+									<th>Phone Number</th>
+									<td><input type="text" name="Phone" class="form-control" placeholder="Phone" /></td>
+								</tr>
+								<tr>
+									<th>Address</th>
+									<td><input type="text" name="Address" class="form-control" placeholder="Address" /></td>
+								</tr>
+								<tr>
+									<th>Job Type</th>
+									<td>            
+		
+										<select name="type" id="type">
+											<option value="Electricity">Electrician</option>
+											<option value="HouseKeeping">HouseKeeping</option>
+											<option value="Pest">Pest</option>
+											<option value="Carpenter">Carpenter</option>
+											<option value="Milk">Milk</option>
+											<option value="Newspaper">Newspaper</option>
+											<option value="Plumber">Plumber</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<th>Profile Pic</th>
+									<td><input type="file"  name="pic"></td>
+								</tr>
+								<tr>
+									<th>Bio</th>
+									<td>
+										<textarea class="form-control" name="Bio" rows="8" placeholder="Basic Information"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<th>cost</th>
+									<td><input type="text" name="cost" class="form-control" placeholder="cost" /></td>
+								</tr>
+								
+								<tr>
+									<th>Facebook Link</th>
+									<td><input type="text" name="fb" class="form-control" placeholder="Facebook Link" /></td>
+								</tr>
+								<tr>
+									<th>Twitter Link</th>
+									<td><input type="text" name="twitter" class="form-control" placeholder="Twitter Link" /></td>
+								</tr>
+								<tr>
+									<th>Instagram Link</th>
+									<td><input type="text" name="Instagram" class="form-control" placeholder="Facebook Link" /></td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<input type="submit" class="btn btn-dark" />
+									</td>
+								</tr>
+							</table>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+</body>
+</html>
+

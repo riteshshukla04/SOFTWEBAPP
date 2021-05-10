@@ -1,0 +1,42 @@
+{% extends 'feedbackbase.html' %}
+{% block content %}
+<div class="row mt-5">
+	<div class="col-md-8 offset-2">
+		<div class="card shadow">
+			<div class="card-header">
+				<b>Add your complain</b>
+				<a href="{% url "home" %}" class="float-right btn btn-sm btn-primary">Back to Feedback Page</a>
+				
+			</div>
+			<div class="card-body">
+				{% if messages %}
+				    {% for message in messages %}
+				    <p{% if message.tags %} class="text-success"{% endif %}>{{ message }}</p>
+				    {% endfor %}
+				{% endif %}
+				<form method="post" action="">
+					{% csrf_token %}
+					<table class="table table-bordered mt-4">
+						
+						<tr>
+							<th>Department</th>
+							<td><input type="text" name="depart" class="form-control" placeholder="Enter Department" /></td>
+						</tr>
+						<tr>
+							<th>Your Complain</th>
+							<td>
+								<textarea class="form-control" name="complain" rows="8" placeholder="Enter your complain description"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<input type="submit" class="btn btn-dark" />
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}

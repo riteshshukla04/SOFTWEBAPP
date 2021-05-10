@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vendor registeration System</title>
+    <!-- Bootstrap 4 Stylesheet -->
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+</head>
+<body class="bg-light">
+    <div class="container">
+		<div class="row mt-5">
+			{%for message in messages%}
+        <p id="message">{{message}}</p>
+        {%endfor%}
+			<div class="col-md-8 offset-2">
+				<div class="card shadow">
+					<div class="card-header">
+						<b>Vendor Form </b>
+						<a href="/vendorregister/" class="float-right btn btn-sm btn-primary">Back to Vendor registeration</a>
+						
+					</div>
+					<div class="card-body">
+						<form method="post" action="" enctype="multipart/form-data">
+							{% csrf_token %}
+							<table class="table table-bordered mt-4">
+								
+								<tr>
+									<th>House Number</th>
+									<td><input type="text" name="HouseNumber" class="form-control" placeholder="House  Number" /></td>
+								</tr>
+								<tr>
+									<th>Date of booking </th>
+									<td><input type="date" name="StartDate" class="form-control" placeholder="Start Date" /></td>
+								</tr>
+								<tr>
+									<th>Type</th>
+									<td>            
+		
+										<select name="TYPE12" id="TYPE12">
+											<option value="Club House">Club House</option>
+											<option value="Guest House">Guest House</option>
+											<option value="Function Hall">Function Hall</option>
+																					</select>
+									</td>
+								</tr>
+								
+								
+								<tr>
+									<th>Reason</th>
+									<td>
+										<textarea class="form-control" name="Reason" rows="8" placeholder="Basic Information"></textarea>
+									</td>
+								</tr>
+								
+								<tr>
+									<td colspan="2">
+										<input type="submit" class="btn btn-dark" />
+									</td>
+								</tr>
+							</table>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+</body>
+</html>
+

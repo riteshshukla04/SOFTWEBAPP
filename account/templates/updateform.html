@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Customer Updation</title>
+    <!-- Bootstrap 4 Stylesheet -->
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+</head>
+<body class="bg-light">
+    <div class="container">
+		<div class="row mt-5">
+			<div class="col-md-8 offset-2">
+				<div class="card shadow">
+					<div class="card-header">
+						<b>update Form </b>
+						<a href="/myorder" class="float-right btn btn-sm btn-primary">Back to Myorder</a>
+						
+					</div>
+					<div class="card-body">
+						{% csrf_token %}
+						<form method="POST" action="" enctype="multipart/form-data">
+							
+							<table class="table table-bordered mt-4">
+								<tr>
+									<th>name</th>
+									<td>{{form.name}}</td>
+								</tr>
+								<tr>
+									<th>Phone Number</th>
+									<td>{{form.phone}}</td>
+								</tr>
+								<tr>
+									<th>Address</th>
+									<td>{{form.address}}</td>
+								</tr>
+								<tr>
+									<th>Email</th>
+									<td>           
+                                        {{form.email}}
+										
+									</td>
+								</tr>
+								
+								<tr>
+									<td colspan="2">
+										<input type="submit" class="btn btn-dark" />
+									</td>
+								</tr>
+							</table>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+</body>
+</html>
+

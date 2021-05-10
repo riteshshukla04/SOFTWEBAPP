@@ -1,0 +1,158 @@
+{%  extends 'mainvendors.html' %}
+
+{% block content %}
+<br>
+
+	<div class="row">
+		<div class="col-md">
+			<div class="card card-body">
+				<h5>Customer:</h5>
+				<hr>
+				<a class="btn btn-outline-info  btn-sm btn-block" href="update/{{request.user}}">Update Information</a>
+				<a class="btn btn-outline-info  btn-sm btn-block" href="/">Home</a>
+	
+			</div>
+		</div>
+	
+		<div class="col-md">
+			<div class="card card-body">
+				<h5>Contact Information</h5>
+				<hr>
+				<p>Email: {{custom.email}}</p>
+				<p>Phone: {{custom.phone}}</p>
+			</div>
+		</div>
+	
+		<div class="col-md">
+			<div class="card card-body">
+				<h5>Total Services</h5>
+				<hr>
+				<h5 style="text-align: center;padding: 10px">Total Order = {{total_orders}}</h5>
+				<h5 style="text-align: center;padding: 10px">Pending = {{pending}}</h5>
+				<h5 style="text-align: center;padding: 10px">Completed  = {{delivered}}</h5>
+			</div>
+		</div>
+	</div>
+
+
+
+
+<br>
+
+
+
+<br>
+<div class="row">
+	
+
+	<div class="col-md-7">
+		<h5>Pending Services</h5>
+		<hr>
+		<div class="card card-body">
+			
+			<table class="table table-sm">
+				<tr>
+					<th>Vendor Name</th>
+					<th>Date and Time</th>
+					<th>Type of work</th>
+					<th>Cost</th>
+					<th>Status</th>
+					<th>Remove</th>
+					
+					
+				</tr>
+				
+				{% for order in orders %}
+					{% if order.status == "Pending" %}
+					<tr>
+						<td>{{order.vendor.name}}</td>
+						<td>{{order.date_created}}</td>
+						<td>{{order.vendor.type}}</td>
+						<td>{{order.vendor.price}}</td>
+						<td>{{order.status}}</td>
+						
+
+						<td><a class="btn btn-sm btn-danger" href="/delete/{{order.id}}">Delete</a></td>
+						
+
+					</tr>
+					{% endif %}
+				{% endfor %}
+
+		
+			</table>
+		</div>
+	</div>
+
+	<div class="col-md-5">
+		<h5>Completed Services:</h5>
+		<hr>
+		<div class="card card-body">
+			
+			<table class="table table-sm">
+				<tr>
+					<th>Vendor Name</th>
+					<th>Date and Time</th>
+					<th>Type of work</th>
+					<th>Status</th>
+					<th>Like</th>
+					
+					
+					
+				</tr>
+				
+				{% for order in orders %}
+					{% if order.status == "Completed" %}
+					<tr>
+						<td>{{order.vendor.name}}</td>
+						<td>{{order.date_created}}</td>
+						<td>{{order.vendor.type}}</td>
+						<td>{{order.status}}</td>
+						<td><a class="btn btn-sm btn-danger" href="/like/{{order.vendor.id}}">Like</a></td>
+						
+
+					</tr>
+					{% endif %}
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+	<div class="card card-body">
+		<h5>Booking </h5>
+		<table class="table table-sm">
+			<tr>
+				<th>Name</th>
+				<th>Date</th>
+				<th>Pending</th>
+				<th>Update</th>
+				<th>Delete</th>
+				
+				
+				
+				
+			</tr>
+			
+			{% for i in booking %}
+				
+				<tr>
+					<td>{{i.Type}}</td>
+					<td>{{i.startdate}}</td>
+					<td>{{i.status}}</td>
+					
+					<td><a class="btn btn-sm btn-danger" href="/updatebooking/{{i.id}}">Update</a></td>
+					<td><a class="btn btn-sm btn-danger" href="/deleteBooking/{{i.id}}">Delete</a></td>
+					
+					
+					
+
+				</tr>
+				
+			{% endfor %}
+
+		</table>
+	</div>
+
+
+</div>
+{% endblock content %}

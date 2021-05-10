@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Booking System</title>
+    <!-- Bootstrap 4 Stylesheet -->
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+</head>
+<body class="bg-light">
+    <div class="container">
+		<div class="row mt-5">
+			<div class="col-md-8 offset-2">
+				<div class="card shadow">
+					<div class="card-header">
+						<b>Vendor Form </b>
+						<a href="/vendorregister/" class="float-right btn btn-sm btn-primary">Back to Vendor registeration</a>
+						
+					</div>
+					<div class="card-body">
+						<form method="post" action="" enctype="multipart/form-data">
+							{% csrf_token %}
+							<table class="table table-bordered mt-4">
+                                
+                                <tr>
+									<th>Type</th>
+									<td>{{form.Type}}</td>
+								</tr>
+								<tr>
+									<th>Date</th>
+									<td>{{form.startdate}}</td>
+								</tr>
+								<tr>
+									<th>Reason</th>
+									<td>{{form.reason}}</td>
+								</tr>
+								
+								
+								<tr>
+									<td colspan="2">
+										<input type="submit" class="btn btn-dark" />
+									</td>
+								</tr>
+							</table>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+</body>
+</html>
+

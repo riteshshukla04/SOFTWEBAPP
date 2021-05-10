@@ -1,0 +1,11 @@
+{% extends 'feedbackbase.html' %}
+{% block content %}
+<div class="jumbotron mt-5 shadow border">
+  <h1 class="display-4">Hello,{{request.user}}!</h1>
+  <p class="lead">Submit Your Valuable Feebacks here. If you have any greivances against us feel free to share</p>
+  <hr class="my-4">
+  <p>It helps to make us better.</p>
+  <a class="btn btn-dark btn-lg" href="{% url "add-complain" %}" role="button">Submit Complain</a>
+  <a class="btn btn-success btn-lg" href="{% url "add-suggestion" %}" role="button">Submit Suggestion</a>
+</div>
+{% endblock content %}
